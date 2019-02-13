@@ -1,6 +1,6 @@
 package com.ly.oj.leetcode;
 
-public class NO_567_checkInclusion {
+public class No_567_checkInclusion {
 
     /**
      * 未通过样例
