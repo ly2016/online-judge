@@ -3,7 +3,7 @@ package com.ly.oj.leetcode;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class No_3_无重复字符的最长子串 {
+public class No_3_lengthOfLongestSubstring {
 
     public static void main(String args[]){
         System.out.println(lengthOfLongestSubstring("abcabcbb"));
