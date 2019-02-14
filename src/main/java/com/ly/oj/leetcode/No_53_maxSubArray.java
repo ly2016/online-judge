@@ -2,7 +2,12 @@ package com.ly.oj.leetcode;
 
 public class No_53_maxSubArray {
 
-    public int maxSubArray(int[] nums) {
+    public static void main(String[] args) {
+        int[] arr = new int[]{1, 9, -1, 5};
+        System.err.println(maxSubArray(arr));
+    }
+
+    public static int maxSubArray(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
