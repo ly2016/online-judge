@@ -46,4 +46,21 @@ public class OperateList {
         }
         System.err.println(tmp.val);
     }
+
+    /**
+     * 链表反转&头插法生成单链表
+     * @param head
+     * @return
+     */
+    public static ListNode reverseList(ListNode head) {
+        ListNode resHead = new ListNode(-1);
+        resHead.next = null;
+        while (head != null) {
+            ListNode tmp = new ListNode(head.val);
+            tmp.next = resHead.next;
+            resHead.next = tmp;
+            head = head.next;
+        }
+        return resHead.next;
+    }
 }
