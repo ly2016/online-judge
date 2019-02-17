@@ -31,4 +31,18 @@ public class No_393_validUtf8 {
         }
         return cnt == 0;
     }
+
+    /**
+     * 下面的方法也可用于确认最高位
+     *
+     * @param num
+     * @return
+     */
+    public int getHeadType(int num) {
+        if ((num & 0b11111000) == 0b11110000) return 3;
+        if ((num & 0b11110000) == 0b11100000) return 2;
+        if ((num & 0b11100000) == 0b11000000) return 1;
+        if ((num & 0b10000000) == 0b10000000) return -1; //error
+        return 0;
+    }
 }
