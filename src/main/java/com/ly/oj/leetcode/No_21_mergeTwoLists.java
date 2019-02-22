@@ -12,6 +12,13 @@ public class No_21_mergeTwoLists {
         OperateList.printListNode(l3);
     }
 
+    /**
+     * 第三条链表，循环插入l1,l2的值
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
