@@ -12,11 +12,11 @@ public class No_56_merge {
 
         Interval l1 = new Interval(1, 4);
         Interval l2 = new Interval(0, 4);
-        //Interval l3 = new Interval(4, 6);
+        Interval l3 = new Interval(4, 6);
         list.add(l1);
         list.add(l2);
-        //list.add(l3);
-        System.err.println(merge2(list));
+        list.add(l3);
+        System.err.println(merge(list).toString());
     }
 
     public static List<Interval> merge(List<Interval> intervals) {
@@ -28,22 +28,11 @@ public class No_56_merge {
             int j = i + 1;
             for (; j < intervals.size(); j++) {
                 second = intervals.get(j);
-                if (first.start == second.start) {
+                if (!(first.end < second.start || first.start > second.end)) {
                     second.end = Math.max(first.end, second.end);
+                    second.start = Math.min(first.start, second.start);
                     break;
-                } else if (first.start < second.start) {
-                    if (first.end >= second.start) {
-                        second.start = first.start;
-                        second.end = Math.max(first.end, second.end);
-                        break;
-                    }
-                } else if (first.start > second.start) {
-                    if (first.end > second.end) {
-                        second.end = first.end;
-                        break;
-                    }
                 }
-
             }
             if (j == intervals.size()) {
                 intervalsReturn.add(intervals.get(i));
@@ -70,7 +59,6 @@ public class No_56_merge {
                         intervals.set(j, inter);
                         break;
                     }
-
                 } else {
                     if (R.end >= L.start) {
                         Interval inter = new Interval(R.start, Math.max(L.end, R.end));
@@ -79,7 +67,6 @@ public class No_56_merge {
                     }
                 }
             }
-
             if (j == intervals.size()) {
                 list.add(intervals.get(i));
             }
